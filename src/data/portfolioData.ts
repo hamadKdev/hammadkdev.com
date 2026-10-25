@@ -42,9 +42,9 @@ export interface EducationItem {
 export const PORTFOLIO_DATA = {
   personal: {
     name: "Muhammad Hammad",
-    role: "AI Automation Engineer | Backend Developer | Software Engineering Student",
-    headline: "AI Automation Engineer & Backend Developer",
-    introduction: "I build AI-powered applications, intelligent automation workflows and backend APIs to solve real-world problems.",
+    role: "Full Stack AI Automation Engineer",
+    headline: "Full Stack AI Automation Engineer",
+    introduction: "I build AI-powered applications, intelligent automation workflows, AI agents, and backend systems that solve real-world problems.",
     aboutBio: [
       "I am currently studying Software Engineering at COMSATS University Islamabad, Attock Campus, Pakistan. My technical focus lies at the intersection of AI automation, autonomous agents, and robust backend engineering.",
       "Rather than chasing hype, I concentrate on building reliable software systems that eliminate repetitive human effort, streamline operational pipelines, and deliver measurable utility through Python, FastAPI, n8n, relational and modern databases, and responsive frontend interfaces.",

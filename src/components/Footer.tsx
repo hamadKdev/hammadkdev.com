@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
               {PORTFOLIO_DATA.personal.name}
             </div>
             <p className="text-xs text-slate-400 max-w-md">
-              AI Automation Engineer, Backend Developer &amp; Software Engineering Student at COMSATS University Islamabad.
+              Full Stack AI Automation Engineer &amp; Software Engineering Student at COMSATS University Islamabad.
             </p>
           </div>
 
