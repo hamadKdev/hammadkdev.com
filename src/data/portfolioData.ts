@@ -126,11 +126,11 @@ export const PORTFOLIO_DATA = {
     },
     {
       id: "admit-crew",
-      title: "AdmitCrew",
+      title: "AdmitCrew — Agentic Abroad Study Management System",
       shortDescription: "A study-abroad consultancy CRM focused on admissions workflows and student application management.",
       fullDescription: "AdmitCrew is a focused customer relationship management (CRM) platform built specifically for international education consultants. It manages the end-to-end student journey, from initial prospect qualification and university selection to document verification and visa application milestone tracking.",
       category: "CRM & Management",
-      liveUrl: "https://abrod-study-consultancy-crm.vercel.app/",
+      liveUrl: "https://agnetic-abroad-srudy-managment-syst.vercel.app/",
       githubUrl: "https://github.com/hamadKdev/",
       technologies: ["React", "CRM Architecture", "Database Design", "Vercel", "REST APIs"],
       keyFeatures: [
