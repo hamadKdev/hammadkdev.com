@@ -19,7 +19,7 @@ export const Contact: React.FC = () => {
     <section id="contact" className="py-20 md:py-28 border-t border-slate-800/80 bg-[#060810]/50 backdrop-blur-[2px] relative">
       {/* Subtle background glow */}
       <div
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-600/5 blur-[120px] pointer-events-none rounded-full"
+        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-pink-600/8 blur-[120px] pointer-events-none rounded-full"
         aria-hidden="true"
       />
 

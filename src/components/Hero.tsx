@@ -20,11 +20,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
     <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
       {/* Subtle Background Glows (clean, restrained) */}
       <div
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-blue-600/10 blur-[120px] pointer-events-none rounded-full"
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-pink-600/12 blur-[120px] pointer-events-none rounded-full"
         aria-hidden="true"
       />
       <div
-        className="absolute top-1/3 right-10 w-[350px] h-[250px] bg-violet-600/10 blur-[100px] pointer-events-none rounded-full"
+        className="absolute top-1/3 right-10 w-[350px] h-[250px] bg-fuchsia-600/12 blur-[100px] pointer-events-none rounded-full"
         aria-hidden="true"
       />
 

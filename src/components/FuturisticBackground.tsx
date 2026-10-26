@@ -82,12 +82,12 @@ export const FuturisticBackground: React.FC = () => {
       document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
     }
 
-    // Colors matching theme
+    // Colors matching dark pink & neon pink theme
     const colors = [
-      'rgba(59, 130, 246, ',  // Electric Blue
-      'rgba(139, 92, 246, ',  // Subtle Violet
-      'rgba(6, 182, 212, ',   // Cyan highlight
-      'rgba(99, 102, 241, ',  // Indigo
+      'rgba(244, 63, 114, ',  // Neon Hot Pink
+      'rgba(236, 72, 153, ',  // Electric Pink
+      'rgba(217, 70, 239, ',  // Rich Magenta
+      'rgba(251, 113, 133, ', // Bright Coral-Pink highlight
     ];
 
     // Developer & AI symbols to float subtly in the background
@@ -159,7 +159,7 @@ export const FuturisticBackground: React.FC = () => {
       const mouseDistThreshold = 180;
       const mouse = mouseRef.current;
 
-      // 1. Draw subtle cursor spotlight on desktop
+      // 1. Draw subtle cursor spotlight on desktop (Neon Pink / Magenta)
       if (!isTouch && mouse.active) {
         const glowGradient = ctx.createRadialGradient(
           mouse.x,
@@ -169,16 +169,16 @@ export const FuturisticBackground: React.FC = () => {
           mouse.y,
           260
         );
-        glowGradient.addColorStop(0, 'rgba(59, 130, 246, 0.09)');
-        glowGradient.addColorStop(0.5, 'rgba(139, 92, 246, 0.04)');
-        glowGradient.addColorStop(1, 'rgba(3, 7, 18, 0)');
+        glowGradient.addColorStop(0, 'rgba(244, 63, 114, 0.11)');
+        glowGradient.addColorStop(0.5, 'rgba(217, 70, 239, 0.05)');
+        glowGradient.addColorStop(1, 'rgba(14, 3, 11, 0)');
         ctx.fillStyle = glowGradient;
         ctx.beginPath();
         ctx.arc(mouse.x, mouse.y, 260, 0, Math.PI * 2);
         ctx.fill();
       }
 
-      // 2. Draw floating dev & AI symbols
+      // 2. Draw floating dev & AI symbols with subtle rose/pink tint
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       for (let i = 0; i < symbols.length; i++) {
@@ -196,12 +196,12 @@ export const FuturisticBackground: React.FC = () => {
         ctx.translate(sym.x, sym.y);
         ctx.rotate(sym.rotation);
         ctx.font = `600 ${sym.size}px 'JetBrains Mono', monospace`;
-        ctx.fillStyle = `rgba(148, 163, 184, ${sym.alpha})`;
+        ctx.fillStyle = `rgba(244, 114, 182, ${sym.alpha})`;
         ctx.fillText(sym.text, 0, 0);
         ctx.restore();
       }
 
-      // 3. Update & render network particles
+      // 3. Update & render network particles with neon pink / magenta glow
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
@@ -235,13 +235,13 @@ export const FuturisticBackground: React.FC = () => {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = `${p.color}${Math.max(0.1, currentAlpha)})`;
-        ctx.shadowColor = `${p.color}0.8)`;
+        ctx.shadowColor = `${p.color}0.85)`;
         ctx.shadowBlur = 6;
         ctx.fill();
         ctx.shadowBlur = 0; // reset shadow
       }
 
-      // 4. Interconnected network lines
+      // 4. Interconnected network lines (neon pink / magenta tint)
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const p1 = particles[i];
@@ -253,28 +253,28 @@ export const FuturisticBackground: React.FC = () => {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(99, 102, 241, ${lineAlpha})`;
+            ctx.strokeStyle = `rgba(217, 70, 239, ${lineAlpha})`;
             ctx.lineWidth = 0.8;
             ctx.stroke();
           }
         }
 
-        // Draw line from particle to cursor if near
+        // Draw line from particle to cursor if near (Neon Pink)
         if (!isTouch && mouse.active) {
           const distToMouse = Math.hypot(mouse.x - particles[i].x, mouse.y - particles[i].y);
           if (distToMouse < mouseDistThreshold) {
-            const mouseLineAlpha = (1 - distToMouse / mouseDistThreshold) * 0.3;
+            const mouseLineAlpha = (1 - distToMouse / mouseDistThreshold) * 0.32;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(mouse.x, mouse.y);
-            ctx.strokeStyle = `rgba(59, 130, 246, ${mouseLineAlpha})`;
+            ctx.strokeStyle = `rgba(244, 63, 114, ${mouseLineAlpha})`;
             ctx.lineWidth = 1;
             ctx.stroke();
           }
         }
       }
 
-      // 5. Draw data pulses traveling along connections
+      // 5. Draw data pulses traveling along connections (Neon Pink / Hot Pink glow)
       for (let k = 0; k < pulses.length; k++) {
         const pulse = pulses[k];
         const n1 = particles[pulse.fromNode];
@@ -295,7 +295,7 @@ export const FuturisticBackground: React.FC = () => {
         ctx.beginPath();
         ctx.arc(px, py, 2.2, 0, Math.PI * 2);
         ctx.fillStyle = `${pulse.color}0.95)`;
-        ctx.shadowColor = `${pulse.color}0.9)`;
+        ctx.shadowColor = `${pulse.color}0.95)`;
         ctx.shadowBlur = 8;
         ctx.fill();
         ctx.shadowBlur = 0;
@@ -321,25 +321,25 @@ export const FuturisticBackground: React.FC = () => {
       className="fixed inset-0 pointer-events-none z-0 overflow-hidden"
       aria-hidden="true"
     >
-      {/* 1. Deep Midnight Obsidian Base Canvas */}
-      <div className="absolute inset-0 bg-[#04060a]" />
+      {/* 1. Deep Dark Pink & Magenta Base Canvas */}
+      <div className="absolute inset-0 bg-[#0d020a]" />
 
-      {/* 2. Soft, Large Glowing Blue, Purple, & Cyan Floating Orbs */}
-      <div className="absolute -top-32 -left-32 w-[620px] h-[620px] bg-blue-600/18 rounded-full blur-[130px] animate-orb-1" />
-      <div className="absolute top-1/3 -right-40 w-[680px] h-[680px] bg-purple-600/16 rounded-full blur-[140px] animate-orb-2" />
-      <div className="absolute -bottom-40 left-1/4 w-[540px] h-[540px] bg-cyan-600/12 rounded-full blur-[130px] animate-orb-3" />
-      <div className="absolute top-2/3 right-1/4 w-[420px] h-[420px] bg-indigo-600/14 rounded-full blur-[120px] animate-orb-1" />
+      {/* 2. Soft, Large Glowing Neon Pink, Rich Magenta & Hot Pink Floating Orbs */}
+      <div className="absolute -top-32 -left-32 w-[620px] h-[620px] bg-pink-600/22 rounded-full blur-[130px] animate-orb-1" />
+      <div className="absolute top-1/3 -right-40 w-[680px] h-[680px] bg-fuchsia-600/20 rounded-full blur-[140px] animate-orb-2" />
+      <div className="absolute -bottom-40 left-1/4 w-[540px] h-[540px] bg-rose-600/16 rounded-full blur-[130px] animate-orb-3" />
+      <div className="absolute top-2/3 right-1/4 w-[420px] h-[420px] bg-pink-500/18 rounded-full blur-[120px] animate-orb-1" />
 
-      {/* 3. Faint Digital Perspective Grid */}
-      <div className="absolute inset-0 bg-digital-grid opacity-60" />
+      {/* 3. Faint Digital Perspective Grid with Pink/Magenta Tint */}
+      <div className="absolute inset-0 bg-digital-grid opacity-65" />
 
       {/* 4. Vignette / Depth Falloff */}
-      <div className="absolute inset-0 bg-radial-[ellipse_at_center,_transparent_40%,_#04060a_95%] opacity-90" />
+      <div className="absolute inset-0 bg-radial-[ellipse_at_center,_transparent_40%,_#0b0209_95%] opacity-90" />
 
-      {/* 5. Occasional Moving Light Streaks representing data streams */}
-      <div className="absolute top-1/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-blue-500/40 to-transparent animate-streak-1" />
-      <div className="absolute top-2/3 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-purple-500/35 to-transparent animate-streak-2" />
-      <div className="absolute top-5/6 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-400/30 to-transparent animate-streak-1" style={{ animationDelay: '9s' }} />
+      {/* 5. Moving Light Streaks in Neon Pink & Magenta */}
+      <div className="absolute top-1/4 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-pink-500/45 to-transparent animate-streak-1" />
+      <div className="absolute top-2/3 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-fuchsia-500/40 to-transparent animate-streak-2" />
+      <div className="absolute top-5/6 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-rose-400/35 to-transparent animate-streak-1" style={{ animationDelay: '9s' }} />
 
       {/* 6. High-Performance Particle Field & Neural Network Canvas */}
       <canvas

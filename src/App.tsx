@@ -38,7 +38,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#04060a] text-slate-100 flex flex-col selection:bg-blue-600/30 selection:text-blue-200 relative">
+    <div className="min-h-screen bg-[#0d020a] text-slate-100 flex flex-col selection:bg-pink-600/30 selection:text-pink-200 relative">
       {/* Full-Screen Animated Futuristic AI & Neural Network Background */}
       <FuturisticBackground />
 
