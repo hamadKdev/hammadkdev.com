@@ -4,7 +4,7 @@ import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 export const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 md:py-28 border-t border-slate-800/80 bg-[#090b10]">
+    <section id="about" className="py-20 md:py-28 border-t border-slate-800/80 bg-[#060810]/50 backdrop-blur-[2px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

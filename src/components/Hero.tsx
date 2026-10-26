@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowDown, Mail, Download, Github, Linkedin, ExternalLink, Terminal } from 'lucide-react';
+import { ArrowDown, Mail, Download, Github, Linkedin, ExternalLink, Terminal, FileText } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 interface HeroProps {
@@ -7,10 +7,10 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
+  const resumeUrl = PORTFOLIO_DATA.personal.cvUrl || '/Muhammad-Hammad-Resume.pdf';
+
   const handleCvClick = (e: React.MouseEvent) => {
-    // If real CV link is provided, allow normal download/opening.
-    // If empty, prevent 404 and open helpful modal.
-    if (!PORTFOLIO_DATA.personal.cvUrl || PORTFOLIO_DATA.personal.cvUrl.trim().length === 0) {
+    if (!resumeUrl || resumeUrl.trim().length === 0) {
       e.preventDefault();
       onOpenCvModal();
     }
@@ -99,14 +99,26 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCvModal }) => {
                 <Mail className="w-4 h-4 text-blue-400" />
               </a>
 
-              <button
-                type="button"
+              {/* Clearly visible Resume button in Hero section */}
+              <a
+                href="#resume"
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold text-slate-100 bg-slate-900/90 hover:bg-slate-800 border border-blue-500/40 hover:border-blue-400 rounded-lg shadow-sm transition-all duration-150 active:scale-95"
+              >
+                <FileText className="w-4 h-4 text-blue-400" />
+                <span>Resume</span>
+              </a>
+
+              {/* Direct Download CV action */}
+              <a
+                href={resumeUrl}
+                download="Muhammad-Hammad-Resume.pdf"
                 onClick={handleCvClick}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-slate-300 hover:text-white bg-slate-900/40 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 rounded-lg transition-all duration-150 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 text-sm font-medium text-slate-300 hover:text-white bg-slate-900/40 hover:bg-slate-800/80 border border-slate-800 hover:border-slate-700 rounded-lg transition-all duration-150 active:scale-95"
+                title="Download Muhammad-Hammad-Resume.pdf"
               >
                 <Download className="w-4 h-4 text-slate-400" />
                 <span>Download CV</span>
-              </button>
+              </a>
             </div>
 
             {/* Social Links */}

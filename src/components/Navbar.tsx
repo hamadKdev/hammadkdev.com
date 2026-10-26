@@ -25,6 +25,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     { name: 'Projects', href: '#projects' },
     { name: 'Services', href: '#services' },
     { name: 'Education', href: '#education' },
+    { name: 'Resume', href: '#resume' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -32,7 +33,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
         isScrolled
-          ? 'bg-[#080a0f]/90 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/20 py-3.5'
+          ? 'bg-[#060810]/85 backdrop-blur-md border-b border-slate-800/80 shadow-lg shadow-black/30 py-3.5'
           : 'bg-transparent py-5'
       }`}
     >

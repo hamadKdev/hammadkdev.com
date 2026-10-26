@@ -6,16 +6,18 @@ import { Skills } from './components/Skills';
 import { Projects } from './components/Projects';
 import { Services } from './components/Services';
 import { Education } from './components/Education';
+import { Resume } from './components/Resume';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { CvModal } from './components/CvModal';
+import { FuturisticBackground } from './components/FuturisticBackground';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState<string>('home');
   const [isCvModalOpen, setIsCvModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    const sectionIds = ['home', 'about', 'skills', 'projects', 'services', 'education', 'contact'];
+    const sectionIds = ['home', 'about', 'skills', 'projects', 'services', 'education', 'resume', 'contact'];
     
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 180;
@@ -36,23 +38,29 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#080a0f] text-slate-100 flex flex-col selection:bg-blue-600/30 selection:text-blue-200">
-      {/* Top Sticky Navigation */}
-      <Navbar activeSection={activeSection} />
+    <div className="min-h-screen bg-[#04060a] text-slate-100 flex flex-col selection:bg-blue-600/30 selection:text-blue-200 relative">
+      {/* Full-Screen Animated Futuristic AI & Neural Network Background */}
+      <FuturisticBackground />
 
-      {/* Main Content Area */}
-      <main className="flex-1">
+      <div className="relative z-10 flex flex-col min-h-screen">
+        {/* Top Sticky Navigation */}
+        <Navbar activeSection={activeSection} />
+
+        {/* Main Content Area */}
+        <main className="flex-1">
         <Hero onOpenCvModal={() => setIsCvModalOpen(true)} />
         <About />
         <Skills />
         <Projects />
         <Services />
         <Education />
+        <Resume />
         <Contact />
       </main>
 
       {/* Footer */}
       <Footer />
+      </div>
 
       {/* Configurable CV Request Dialog */}
       <CvModal

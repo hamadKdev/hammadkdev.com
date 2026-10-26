@@ -16,7 +16,7 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 border-t border-slate-800/80 bg-[#080a0f] relative">
+    <section id="contact" className="py-20 md:py-28 border-t border-slate-800/80 bg-[#060810]/50 backdrop-blur-[2px] relative">
       {/* Subtle background glow */}
       <div
         className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-blue-600/5 blur-[120px] pointer-events-none rounded-full"
@@ -28,7 +28,7 @@ export const Contact: React.FC = () => {
         {/* Main Section Heading */}
         <div className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-blue-400 mb-3">
-            <span>06 / Get In Touch</span>
+            <span>07 / Get In Touch</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-sans">
             Let&apos;s Build Something Useful.

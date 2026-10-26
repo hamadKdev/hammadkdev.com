@@ -53,11 +53,12 @@ export const PORTFOLIO_DATA = {
     location: "COMSATS University Islamabad, Attock Campus, Pakistan",
     linkedinUrl: "https://linkedin.com/in/muhammad-hammadkdev",
     githubUrl: "https://github.com/hamadKdev/",
-    // Email is editable here. If set to an empty string "", the email contact button will be hidden automatically.
-    email: "khanhamadmehad@gmail.com",
-    // Configurable CV/Resume link (e.g. "/resume.pdf" or a direct Google Drive / hosting link).
-    // If left as empty string "", a helpful dialog allows recruiters to request it directly or copy email.
-    cvUrl: "",
+    email: "khanmuhamd2007@gmail.com",
+    phone: "03309144903",
+    // Configurable CV/Resume link pointing to the verified uploaded PDF in public folder
+    cvUrl: "/Muhammad-Hammad-Resume.pdf",
+    resumePdfUrl: "/Muhammad-Hammad-Resume.pdf",
+    resumeDownloadFilename: "Muhammad-Hammad-Resume.pdf",
     statusText: "Available for Internships & Junior Roles",
   },
 

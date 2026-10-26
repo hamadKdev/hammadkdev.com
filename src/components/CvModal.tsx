@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Mail, Check, Copy, ExternalLink, FileText, ArrowRight } from 'lucide-react';
+import { X, Mail, Check, Copy, ExternalLink, FileText, ArrowRight, Download } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data/portfolioData';
 
 interface CvModalProps {
@@ -55,17 +55,25 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
         {hasConfiguredCv ? (
           <div className="space-y-4">
             <p className="text-sm text-slate-300">
-              The verified CV document is available for direct view and download.
+              Muhammad Hammad&apos;s verified resume is available for instant online viewing or direct download.
             </p>
             <div className="pt-2 flex flex-col sm:flex-row gap-3">
               <a
                 href={PORTFOLIO_DATA.personal.cvUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm rounded-lg transition-colors"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white font-medium text-sm rounded-lg transition-colors shadow-sm"
               >
-                <span>Open Verified CV</span>
+                <span>View Resume</span>
                 <ExternalLink className="w-4 h-4" />
+              </a>
+              <a
+                href={PORTFOLIO_DATA.personal.cvUrl}
+                download="Muhammad-Hammad-Resume.pdf"
+                className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-medium text-sm rounded-lg transition-colors"
+              >
+                <span>Download Resume</span>
+                <Download className="w-4 h-4 text-blue-400" />
               </a>
             </div>
           </div>
